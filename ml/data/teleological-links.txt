@@ -1,0 +1,1398 @@
+word1	relation	word2
+aircraft%1:06:00::	action	fly%2:38:00::
+aircraft%1:06:00::	action	transport%2:38:00::
+aircraft%1:06:00::	theme	passenger%1:18:00::
+aircraft%1:06:00::	theme	cargo%1:06:00::
+aircraft%1:06:00::	agent	pilot%1:18:00::
+		
+alarm%1:06:00::	action	alarm%2:32:00::
+alarm%1:06:00::	action	alert%2:32:00::
+alarm%1:06:00::	action	ring%2:39:00::
+alarm%1:06:00::	cause	danger%1:26:00::
+alarm%1:06:00::	result	alarm%1:10:00::
+alarm%1:06:00::	result	alert%1:26:00::
+		
+alarm%1:06:01::	action	clock%2:30:00::
+alarm%1:06:01::	action	time%2:30:00::
+alarm%1:06:01::	action	awaken%2:29:00::
+alarm%1:06:01::	action	wake%2:29:02::
+alarm%1:06:01::	action	waken%2:29:01::
+alarm%1:06:01::	undergoer	sleeper%1:18:00::
+alarm%1:06:01::	theme	time%1:03:00::
+alarm%1:06:01::	result	clock_time%1:28:00::
+		
+album%1:10:00::	action	play%2:36:11::
+album%1:10:00::	theme	recording%1:06:00::
+album%1:10:00::	result	music%1:09:01::
+album%1:10:00::	instrument	phonograph%1:06:01::
+album%1:10:00::	beneficiary	listener%1:18:00::
+		
+ambulance%1:06:00::	action	transport%2:35:00::
+ambulance%1:06:00::	theme	patient%1:18:00::
+ambulance%1:06:00::	cause	injury%1:26:00::
+ambulance%1:06:00::	destination	hospital%1:06:00::
+		
+apparatus%1:06:00::	action	serve%2:42:03::
+apparatus%1:06:00::	action	perform%2:36:00::
+apparatus%1:06:00::	result	work%1:04:00::
+		
+aquarium%1:06:00::	action	house%2:42:02::
+aquarium%1:06:00::	undergoer	water%1:13:00::
+aquarium%1:06:00::	beneficiary	fish%1:05:00::
+		
+armchair%1:06:00::	action	seat%2:42:00::
+armchair%1:06:00::	beneficiary	sitter%1:18:01::
+		
+arrow%1:06:00::	action	pierce%2:35:00::
+arrow%1:06:00::	action	hit%2:35:01::
+arrow%1:06:00::	action	shoot%2:33:01::
+arrow%1:06:00::	instrument	bow%1:06:01::
+arrow%1:06:00::	undergoer	target%1:10:00::
+arrow%1:06:00::	result	wound%1:26:00::
+		
+		
+suitcase%1:06:00::	action	contain%2:42:13::
+suitcase%1:06:00::	action	transport%2:35:00::
+suitcase%1:06:00::	theme	belongings%1:21:00::
+suitcase%1:06:00::	theme	clothes%1:06:00::
+suitcase%1:06:00::	beneficiary	traveller%1:18:00::
+suitcase%1:06:00::	cause	travel%1:04:00::
+		
+purse%1:06:00::	action	contain%2:42:13::
+purse%1:06:00::	theme	belongings%1:21:00::
+purse%1:06:00::	theme	money%1:21:00::
+purse%1:06:00::	beneficiary	wearer%1:18:00::
+		
+ball%1:06:01::	action	hit%2:35:03::
+ball%1:06:01::	action	throw%2:35:00::
+ball%1:06:01::	action	kick%2:35:01::
+ball%1:06:01::	action	catch%2:35:00::
+ball%1:06:01::	agent	player%1:18:01::
+ball%1:06:01::	location	game%1:04:00::
+ball%1:06:01::	location	sport%1:04:00::
+		
+bar%1:06:00::	action	block%2:35:00::
+bar%1:06:00::	location	opening%1:17:00::
+		
+bar%1:06:00::	action	hit%2:35:00::
+bar%1:06:00::	agent	attacker%1:18:00::
+bar%1:06:00::	undergoer	opponent%1:18:00::
+bar%1:06:00::	result	injury%1:26:00::
+		
+bar%1:06:09::	action	support%2:35:00::
+bar%1:06:09::	action	perform%2:36:01::
+bar%1:06:09::	agent	gymnast%1:18:00::
+bar%1:06:09::	theme	routine%1:10:01::
+bar%1:06:09::	location	gym%1:06:00::
+		
+barrel%1:06:00::	action	hold%2:42:13::
+barrel%1:06:00::	theme	content%1:14:00::
+		
+stand%1:06:00::	action	support%2:35:00::
+stand%1:06:00::	theme	object%1:03:00::
+		
+basket%1:06:00::	action	hold%2:42:13::
+basket%1:06:00::	theme	content%1:14:00::
+basket%1:06:00::	theme	solid%1:27:04::
+		
+tub%1:06:01::	action	bathe%2:29:01::
+tub%1:06:01::	action	soak%2:35:01::
+tub%1:06:01::	agent	bather%1:18:01::
+tub%1:06:01::	location	bathroom%1:06:00::
+tub%1:06:01::	result	cleanness%1:26:00::
+tub%1:06:01::	instrument	water%1:13:00::
+		
+battery%1:06:00::	action	power%2:34:00::
+battery%1:06:00::	result	electricity%1:19:01::
+		
+beam%1:06:00::	action	build%2:36:00::
+beam%1:06:00::	agent	worker%1:18:00::
+beam%1:06:00::	result	construction%1:06:00::
+beam%1:06:00::	instrument	tool%1:06:00::
+		
+bed%1:06:00::	action	sleep%2:29:00::
+bed%1:06:00::	agent	sleeper%1:18:00::
+bed%1:06:00::	location	bedroom%1:06:00::
+bed%1:06:00::	cause	sleepiness%1:26:00::
+bed%1:06:00::	result	sleep%1:26:00::
+		
+bed%1:06:00::	action	rest%2:32:00::
+bed%1:06:00::	agent	rester%1:18:00::
+bed%1:06:00::	location	bedroom%1:06:00::
+bed%1:06:00::	cause	tiredness%1:26:00::
+bed%1:06:00::	result	rest%1:04:00::
+		
+bed%1:06:00::	action	rest%2:32:00::
+bed%1:06:00::	agent	rester%1:18:00::
+bed%1:06:00::	location	bedroom%1:06:00::
+bed%1:06:00::	cause	tiredness%1:26:00::
+bed%1:06:00::	result	rest%1:04:00::
+		
+bell%1:06:02::	action	ring%2:39:01::
+bell%1:06:02::	action	push%2:38:00::
+bell%1:06:02::	agent	visitor%1:18:00::
+bell%1:06:02::	location	door%1:06:00::
+bell%1:06:02::	destination	host%1:18:02::
+		
+bench%1:06:00::	action	sit%2:35:00::
+bench%1:06:00::	agent	occupant%1:18:00::
+		
+workbench%1:06:00::	action	work%2:41:02::
+workbench%1:06:00::	agent	worker%1:18:00::
+workbench%1:06:00::	location	workroom%1:06:00::
+		
+bike%1:06:02::	action	ride%2:38:00::
+bike%1:06:02::	action	transport%2:38:00::
+bike%1:06:02::	agent	rider%1:18:02::
+bike%1:06:02::	location	outdoors%1:15:00::
+		
+bin%1:06:00::	action	hold%2:42:13::
+bin%1:06:00::	action	store%2:40:02::
+bin%1:06:00::	theme	content%1:14:00::
+		
+blade%1:06:00::	action	cut%2:35:00::
+		
+boat%1:06:00::	action	sail%2:38:03::
+boat%1:06:00::	action	boat%2:38:00::
+boat%1:06:00::	agent	sailor%1:18:00::
+boat%1:06:00::	agent	boater%1:18:00::
+boat%1:06:00::	destination	shore%1:17:00::
+boat%1:06:00::	destination	land%1:17:00::
+boat%1:06:00::	source	shore%1:17:00::
+boat%1:06:00::	source	land%1:17:00::
+boat%1:06:00::	location	water%1:17:00::
+		
+boat%1:06:00::	action	transport%2:38:00::
+boat%1:06:00::	agent	sailor%1:18:00::
+boat%1:06:00::	agent	boater%1:18:00::
+boat%1:06:00::	theme	passenger%1:18:00::
+boat%1:06:00::	destination	shore%1:17:00::
+boat%1:06:00::	destination	land%1:17:00::
+boat%1:06:00::	source	shore%1:17:00::
+boat%1:06:00::	source	land%1:17:00::
+boat%1:06:00::	location	water%1:17:00::
+		
+bolt%1:06:00::	action	fasten%2:35:01::
+bolt%1:06:00::	instrument	wrench%1:06:00::
+		
+bomb%1:06:00::	action	destroy%2:36:00::
+bomb%1:06:00::	action	explode%2:30:01::
+bomb%1:06:00::	agent	bomber%1:18:00::
+bomb%1:06:00::	undergoer	target%1:15:00::
+bomb%1:06:00::	cause	conflict%1:04:00::
+		
+bomber%1:06:00::	action	bomb%2:33:00::
+bomber%1:06:00::	agent	pilot%1:18:00::
+bomber%1:06:00::	undergoer	target%1:15:00::
+bomber%1:06:00::	theme	bomb%1:06:00::
+bomber%1:06:00::	location	air%1:15:00::
+		
+hamper%1:06:01::	action	confine%2:35:01::
+hamper%1:06:01::	agent	captor%1:18:00::
+hamper%1:06:01::	theme	captive%1:18:00::
+		
+bottle%1:06:00::	action	hold%2:42:13::
+bottle%1:06:00::	theme	liquid%1:27:04::
+		
+freighter%1:06:00::	action	transport%2:38:00::
+freighter%1:06:00::	agent	merchant%1:18:00::
+freighter%1:06:00::	theme	cargo%1:06:00::
+freighter%1:06:00::	destination	land%1:17:00::
+freighter%1:06:00::	source	land%1:17:00::
+freighter%1:06:00::	location	water%1:17:00::
+		
+bow%1:06:01::	action	shoot%2:35:01::
+bow%1:06:01::	agent	archer%1:18:00::
+bow%1:06:01::	destination	target%1:10:00::
+bow%1:06:01::	theme	arrow%1:06:00::
+		
+bowl%1:06:01::	action	hold%2:42:13::
+bowl%1:06:01::	theme	object%1:03:00::
+bowl%1:06:01::	theme	liquid%1:27:04::
+		
+box%1:06:00::	action	hold%2:42:13::
+box%1:06:00::	theme	object%1:03:00::
+		
+brake%1:06:00::	action	slow%2:30:05::
+brake%1:06:00::	action	stop%2:38:00::
+brake%1:06:00::	agent	operator%1:18:00::
+brake%1:06:00::	theme	vehicle%1:06:00::
+		
+brick%1:06:00::	action	build%2:36:00::
+brick%1:06:00::	agent	maker%1:18:00::
+brick%1:06:00::	result	structure%1:06:00::
+		
+brush%1:06:00::	action	brush%2:35:02::
+		
+brush%1:06:00::	action	brush%2:30:00::
+brush%1:06:00::	undergoer	surface%1:15:00::
+brush%1:06:00::	theme	particle%1:27:01::
+		
+brush%1:06:00::	action	apply%2:35:00::
+brush%1:06:00::	undergoer	surface%1:15:00::
+brush%1:06:00::	theme	liquid%1:27:04::
+brush%1:06:00::	theme	powder%1:27:00::
+		
+pail%1:06:00::	action	hold%2:42:13::
+pail%1:06:00::	action	carry%2:35:02::
+pail%1:06:00::	theme	object%1:03:00::
+pail%1:06:00::	theme	liquid%1:27:04::
+		
+bulb%1:06:00::	action	light%2:30:00::
+bulb%1:06:00::	theme	area%1:06:00::
+bulb%1:06:00::	theme	object%1:03:00::
+bulb%1:06:00::	instrument	electricity%1:19:01::
+		
+bullet%1:06:00::	action	shoot%2:33:00::
+bullet%1:06:00::	agent	shooter%1:18:00::
+bullet%1:06:00::	undergoer	target%1:10:00::
+bullet%1:06:00::	cause	conflict%1:04:00::
+bullet%1:06:00::	result	damage%1:11:00::
+bullet%1:06:00::	instrument	gun%1:06:00::
+		
+bundle%1:06:00::	action	carry%2:35:02::
+bundle%1:06:00::	action	store%2:40:00::
+bundle%1:06:00::	theme	object%1:03:00::
+		
+bus%1:06:00::	action	transport%2:38:00::
+bus%1:06:00::	agent	driver%1:18:00::
+bus%1:06:00::	theme	person%1:03:00::
+bus%1:06:00::	source	bus_stop%1:15:00::
+bus%1:06:00::	destination	bus_stop%1:15:00::
+bus%1:06:00::	location	road%1:06:00::
+		
+button%1:06:00::	action	fasten%2:35:01::
+button%1:06:00::	agent	person%1:03:00::
+button%1:06:00::	theme	cloth%1:06:00::
+button%1:06:00::	instrument	buttonhole%1:06:00::
+		
+button%1:06:01::	action	depress%2:35:10::
+		
+cabinet%1:06:00::	action	store%2:40:00::
+cabinet%1:06:00::	action	display%2:39:00::
+cabinet%1:06:00::	theme	object%1:03:00::
+		
+call%1:10:01::	action	talk%2:32:01::
+call%1:10:01::	action	communicate%2:32:02::
+call%1:10:01::	agent	caller%1:18:01::
+call%1:10:01::	undergoer	respondent%1:18:00::
+call%1:10:01::	instrument	telephone%1:06:00::
+		
+camera%1:06:00::	action	photograph%2:32:00::
+camera%1:06:00::	agent	photographer%1:18:00::
+camera%1:06:00::	result	photograph%1:06:00::
+camera%1:06:00::	result	picture%1:06:02::
+camera%1:06:00::	undergoer	subject%1:06:00::
+		
+candle%1:06:00::	action	light%2:30:00::
+candle%1:06:00::	result	light%1:19:00::
+candle%1:06:00::	result	luminosity%1:07:00::
+candle%1:06:00::	result	light%1:15:00::
+		
+cane%1:06:01::	action	support%2:35:00::
+cane%1:06:01::	agent	walker%1:18:00::
+cane%1:06:01::	result	support%1:04:01::
+		
+car%1:06:00::	action	transport%2:38:00::
+car%1:06:00::	action	drive%2:38:09::
+car%1:06:00::	agent	driver%1:18:00::
+car%1:06:00::	theme	passenger%1:18:00::
+car%1:06:00::	theme	rider%1:18:01::
+		
+rug%1:06:00::	action	cover%2:35:00::
+rug%1:06:00::	action	insulate%2:30:01::
+rug%1:06:00::	action	carpet%2:35:00::
+rug%1:06:00::	undergoer	floor%1:06:00::
+		
+pram%1:06:00::	action	cart%1:06:01::
+pram%1:06:00::	theme	baby%1:18:00::
+pram%1:06:00::	beneficiary	baby%1:18:00::
+		
+cart%1:06:01::	action	cart%1:06:01::
+cart%1:06:01::	agent	carter%1:18:00::
+cart%1:06:01::	theme	good%1:06:00::
+		
+case%1:06:01::	action	store%2:40:00::
+case%1:06:01::	action	display%2:39:00::
+case%1:06:01::	theme	object%1:03:00::
+case%1:06:01::	location	shop%1:06:00::
+case%1:06:01::	location	museum%1:06:00::
+case%1:06:01::	location	home%1:06:00::
+		
+cassette%1:06:00::	action	hold%2:42:13::
+cassette%1:06:00::	theme	tape%1:06:04::
+		
+cell%1:06:04::	action	telephone%2:32:00::
+cell%1:06:04::	agent	caller%1:18:01::
+cell%1:06:04::	result	call%1:10:01::
+		
+chain%1:06:00::	action	link%2:35:00::
+chain%1:06:00::	action	chain%2:35:00::
+chain%1:06:00::	action	secure%2:35:01::
+		
+chair%1:06:00::	action	seat%2:42:00::
+chair%1:06:00::	beneficiary	people%1:14:00::
+		
+chalk%1:06:00::	action	write%2:36:01::
+chalk%1:06:00::	action	mark%2:30:00::
+chalk%1:06:00::	agent	writer%1:18:01::
+chalk%1:06:00::	result	writing%1:10:01::
+chalk%1:06:00::	result	mark%1:10:03::
+		
+clock%1:06:00::	action	clock%2:30:00::
+clock%1:06:00::	undergoer	time%1:03:00::
+clock%1:06:00::	result	time%1:28:03::
+clock%1:06:00::	beneficiary	people%1:14:00::
+		
+club%1:06:00::	action	club%2:35:00::
+club%1:06:00::	action	beat%2:35:01::
+club%1:06:00::	agent	hitter%1:18:01::
+		
+coffin%1:06:00::	action	coffin%2:35:00::
+coffin%1:06:00::	cause	death%1:11:00::
+coffin%1:06:00::	theme	corpse%1:08:00::
+coffin%1:06:00::	destination	cemetery%1:15:00::
+coffin%1:06:00::	destination	grave%1:06:00::
+		
+column%1:06:01::	location	monument%1:06:00::
+		
+compact%1:06:01::	action	transport%2:38:00::
+compact%1:06:01::	action	drive%2:38:09::
+compact%1:06:01::	agent	driver%1:18:00::
+compact%1:06:01::	theme	passenger%1:18:00::
+compact%1:06:01::	theme	rider%1:18:01::
+		
+computer%1:06:00::	action	computerize%2:36:00::
+computer%1:06:00::	action	compute%2:31:00::
+computer%1:06:00::	action	process%2:31:00::
+computer%1:06:00::	action	work%2:41:05::
+computer%1:06:00::	agent	programmer%1:18:00::
+computer%1:06:00::	agent	worker%1:18:00::
+computer%1:06:00::	theme	data%1:14:00::
+computer%1:06:00::	theme	information%1:14:00::
+computer%1:06:00::	theme	work%1:04:00::
+		
+counter%1:06:00::	action	support%2:35:00::
+counter%1:06:00::	result	space%1:15:00::
+		
+cream%1:06:00::	action	moisturize%2:30:00::
+cream%1:06:00::	action	soften%2:30:01::
+cream%1:06:00::	action	soothe%2:29:00::
+cream%1:06:00::	theme	skin%1:08:00::
+cream%1:06:00::	beneficiary	skin%1:08:00::
+cream%1:06:00::	beneficiary	person%1:03:00::
+cream%1:06:00::	result	person%1:03:00::
+		
+crown%1:06:01::	action	crown%2:41:00::
+crown%1:06:01::	experiencer	sovereign%1:18:00::
+crown%1:06:01::	cause	sovereignty%1:26:02::
+		
+crutch%1:06:00::	action	support%2:35:00::
+crutch%1:06:00::	action	aid%2:41:00::
+crutch%1:06:00::	beneficiary	person%1:03:00::
+crutch%1:06:00::	beneficiary	patient%1:18:00::
+crutch%1:06:00::	beneficiary	cripple%1:18:00::
+crutch%1:06:00::	cause	injury%1:26:00::
+		
+cup%1:06:00::	action	contain%2:42:13::
+cup%1:06:00::	theme	liquid%1:27:04::
+cup%1:06:00::	theme	drink%1:13:04::
+		
+curtain%1:06:00::	action	curtain%2:40:00::
+curtain%1:06:00::	action	blind%2:30:01::
+curtain%1:06:00::	action	hide%2:39:00::
+curtain%1:06:00::	action	obstruct%2:39:04::
+curtain%1:06:00::	action	darken%2:30:01::
+curtain%1:06:00::	undergoer	window%1:06:00::
+curtain%1:06:00::	result	privacy%1:07:00::
+curtain%1:06:00::	result	privacy%1:26:02::
+curtain%1:06:00::	result	dark%1:26:00::
+		
+desk%1:06:00::	action	work%2:41:05::
+desk%1:06:00::	action	write%2:32:00::
+		
+sensor%1:06:00::	action	sense%2:39:02::
+sensor%1:06:00::	action	detect%2:39:00::
+sensor%1:06:00::	action	monitor%2:39:01::
+sensor%1:06:00::	cause	signal%1:19:00::
+sensor%1:06:00::	cause	stimulus%1:09:00::
+sensor%1:06:00::	result	response%1:07:00::
+		
+dish%1:06:00::	action	contain%2:42:13::
+dish%1:06:00::	action	serve%2:34:00::
+dish%1:06:00::	theme	food%1:13:00::
+dish%1:06:00::	theme	dish%1:13:00::
+		
+dish%1:06:01::	action	transmit%2:32:00::
+dish%1:06:01::	action	receive%2:39:00::
+dish%1:06:01::	action	scan%2:35:00::
+dish%1:06:01::	theme	signal%1:19:00::
+		
+drawer%1:06:00::	action	store%2:40:02::
+		
+drill%1:06:00::	action	drill%2:35:00::
+drill%1:06:00::	action	cut%2:35:10::
+drill%1:06:00::	agent	worker%1:18:00::
+drill%1:06:00::	result	hole%1:06:00::
+drill%1:06:00::	result	hole%1:17:01::
+		
+drum%1:06:00::	action	drum%2:39:00::
+drum%1:06:00::	agent	drummer%1:18:00::
+drum%1:06:00::	result	drum%1:11:00::
+drum%1:06:00::	result	beat%1:10:00::
+drum%1:06:00::	result	music%1:10:00::
+		
+engine%1:06:00::	action	power%2:34:00::
+engine%1:06:00::	result	power%1:19:00::
+engine%1:06:00::	result	work%1:19:00::
+engine%1:06:00::	cause	energy%1:19:00::
+		
+engine%1:06:01::	action	power%2:34:00::
+engine%1:06:01::	result	power%1:19:00::
+engine%1:06:01::	result	work%1:19:00::
+engine%1:06:01::	result	motion%1:04:01::
+engine%1:06:01::	theme	train%1:06:00::
+		
+envelope%1:06:01::	action	contain%2:42:13::
+envelope%1:06:01::	action	protect%2:33:00::
+envelope%1:06:01::	undergoer	letter%1:10:00::
+		
+equipment%1:06:00::	action	undertake%2:36:00::
+equipment%1:06:00::	action	perform%2:36:00::
+equipment%1:06:00::	result	work%1:04:00::
+		
+perfume%1:06:00::	action	perfume%2:39:00::
+perfume%1:06:00::	action	perfume%2:29:00::
+perfume%1:06:00::	theme	smell%1:09:02::
+perfume%1:06:00::	result	fragrance%1:09:00::
+		
+smell%1:09:02::	action	connect%2:32:00::
+smell%1:09:02::	theme	telephone%1:10:00::
+		
+fax%1:06:00::	action	fax%2:32:00::
+fax%1:06:00::	action	telefax%2:32:00::
+fax%1:06:00::	action	send%2:32:00::
+fax%1:06:00::	action	copy%2:36:03::
+fax%1:06:00::	theme	document%1:10:00::
+fax%1:06:00::	result	copy%1:10:00::
+		
+ferry%1:06:00::	action	ferry%2:38:02::
+ferry%1:06:00::	action	ferry%2:38:01::
+ferry%1:06:00::	action	ferry%2:38:00::
+ferry%1:06:00::	action	transport%2:38:00::
+ferry%1:06:00::	theme	passenger%1:18:00::
+ferry%1:06:00::	theme	cargo%1:06:00::
+ferry%1:06:00::	location	water%1:17:00::
+ferry%1:06:00::	agent	captain%1:18:03::
+ferry%1:06:00::	result	transportation%1:04:00::
+		
+file%1:06:00::	action	file%2:35:00::
+file%1:06:00::	action	smooth%2:35:01::
+file%1:06:00::	action	shape%2:30:00::
+file%1:06:00::	undergoer	surface%1:06:00::
+file%1:06:00::	theme	shape%1:07:01::
+file%1:06:00::	result	smoothness%1:07:00::
+file%1:06:00::	result	shape%1:07:00::
+		
+file%1:06:01::	action	organize%2:30:00::
+file%1:06:01::	action	store%2:40:02::
+file%1:06:01::	action	file%2:32:00::
+file%1:06:01::	undergoer	file%1:10:00::
+file%1:06:01::	result	organization%1:04:01::
+file%1:06:01::	result	organization%1:07:00::
+		
+film%1:06:01::	action	film%2:32:00::
+film%1:06:01::	action	record%2:32:00::
+film%1:06:01::	theme	picture%1:06:00::
+film%1:06:01::	theme	photograph%1:06:00::
+film%1:06:01::	result	negative%1:06:00::
+film%1:06:01::	result	transparency%1:06:01::
+film%1:06:01::	agent	photographer%1:18:00::
+		
+film%1:10:00::	action	film%2:32:00::
+film%1:10:00::	action	film%2:36:00::
+film%1:10:00::	action	record%2:32:00::
+film%1:10:00::	theme	picture%1:06:00::
+film%1:10:00::	result	film%1:10:01::
+film%1:10:00::	agent	cinematographer%1:18:00::
+		
+filter%1:06:00::	action	filter%1:06:00::
+filter%1:06:00::	action	purify%2:30:00::
+filter%1:06:00::	theme	impurity%1:27:00::
+filter%1:06:00::	result	filtrate%1:27:00::
+		
+flash%1:06:00::	instrument	camera%1:06:00::
+flash%1:06:00::	agent	photographer%1:18:00::
+flash%1:06:00::	action	flash%2:30:04::
+flash%1:06:00::	action	light%2:30:00::
+flash%1:06:00::	result	light%1:19:00::
+		
+furniture%1:06:00::	action	furnish%2:40:01::
+furniture%1:06:00::	location	house%1:06:00::
+furniture%1:06:00::	location	building%1:06:00::
+		
+accelerator%1:06:02::	action	accelerate%2:30:01::
+accelerator%1:06:02::	agent	driver%1:18:00::
+accelerator%1:06:02::	location	vehicle%1:06:00::
+accelerator%1:06:02::	theme	speed%1:28:00::
+accelerator%1:06:02::	theme	speed%1:07:00::
+accelerator%1:06:02::	undergoer	throttle%1:06:00::
+accelerator%1:06:02::	result	speed%1:07:00::
+		
+glass%1:06:00::	action	contain%2:42:13::
+glass%1:06:00::	theme	drink%1:13:04::
+glass%1:06:00::	theme	liquid%1:27:04::
+glass%1:06:00::	beneficiary	drinker%1:18:01::
+		
+glass%1:06:02::	action	reflect%2:39:02::
+glass%1:06:02::	theme	image%1:06:00::
+glass%1:06:02::	result	reflection%1:06:00::
+glass%1:06:02::	beneficiary	viewer%1:18:01::
+		
+glasses%1:06:00::	action	correct%2:29:04::
+glasses%1:06:00::	theme	vision%1:09:01::
+glasses%1:06:00::	beneficiary	wearer%1:18:00::
+glasses%1:06:00::	beneficiary	viewer%1:18:01::
+glasses%1:06:00::	result	vision%1:09:01::
+		
+guitar%1:06:00::	agent	guitarist%1:18:00::
+guitar%1:06:00::	theme	sound%1:07:00::
+guitar%1:06:00::	instrument	string%1:06:03::
+guitar%1:06:00::	result	music%1:10:00::
+guitar%1:06:00::	result	music%1:09:00::
+guitar%1:06:00::	result	music%1:09:01::
+guitar%1:06:00::	result	sound%1:07:00::
+guitar%1:06:00::	cause	vibration%1:04:00::
+		
+gun%1:06:00::	action	shoot%2:33:01::
+gun%1:06:00::	action	shoot%2:33:00::
+gun%1:06:00::	action	fire%2:33:02::
+gun%1:06:00::	agent	shooter%1:18:00::
+gun%1:06:00::	agent	shooter%1:18:01::
+gun%1:06:00::	undergoer	target%1:10:00::
+gun%1:06:00::	theme	bullet%1:06:00::
+gun%1:06:00::	result	shot%1:04:00::
+gun%1:06:00::	result	shot%1:04:09::
+		
+hammer%1:06:00::	action	hammer%2:35:00::
+hammer%1:06:00::	action	strike%2:35:00::
+hammer%1:06:00::	result	hammering%1:04:00::
+		
+chopper%1:06:01::	action	fly%2:38:00::
+chopper%1:06:01::	action	transport%2:38:00::
+chopper%1:06:01::	action	travel%2:38:00::
+chopper%1:06:01::	agent	pilot%1:18:00::
+chopper%1:06:01::	theme	passenger%1:18:00::
+chopper%1:06:01::	theme	cargo%1:06:00::
+chopper%1:06:01::	instrument	blade%1:06:02::
+		
+hook%1:06:00::	action	hook%2:35:00::
+hook%1:06:00::	action	hook%2:35:01::
+		
+horn%1:06:05::	action	sound%2:39:00::
+horn%1:06:05::	action	sound%2:39:03::
+horn%1:06:05::	action	honk%2:39:00::
+horn%1:06:05::	result	sound%1:07:00::
+horn%1:06:05::	result	sound%1:11:00::
+horn%1:06:05::	result	honk%1:11:00::
+horn%1:06:05::	result	noise%1:09:00::
+horn%1:06:05::	agent	driver%1:18:00::
+		
+instrument%1:06:00::	cause	task%1:04:00::
+		
+instrument%1:06:01::	action	play%2:36:12::
+instrument%1:06:01::	action	play%2:36:01::
+instrument%1:06:01::	action	sound%2:39:03::
+instrument%1:06:01::	agent	musician%1:18:01::
+instrument%1:06:01::	result	music%1:10:00::
+instrument%1:06:01::	result	music%1:09:01::
+instrument%1:06:01::	theme	sound%1:07:00::
+instrument%1:06:01::	beneficiary	listener%1:18:00::
+		
+jar%1:06:00::	action	jar%2:35:10::
+jar%1:06:00::	action	contain%2:42:13::
+jar%1:06:00::	action	preserve%2:42:01::
+		
+kettle%1:06:00::	action	contain%2:42:13::
+kettle%1:06:00::	action	boil%2:30:02::
+		
+key%1:06:00::	action	unlock%2:35:00::
+key%1:06:00::	action	lock%2:35:00::
+key%1:06:00::	action	open%2:35:00::
+key%1:06:00::	action	close%2:35:00::
+key%1:06:00::	undergoer	lock%1:06:00::
+		
+		
+knife%1:06:00::	action	cut%2:35:00::
+knife%1:06:00::	action	cut%2:35:10::
+knife%1:06:00::	action	stab%2:35:00::
+knife%1:06:00::	agent	cutter%1:18:00::
+knife%1:06:00::	result	cut%1:26:00::
+knife%1:06:00::	result	cut%1:04:02::
+knife%1:06:00::	result	cut%1:04:01::
+		
+knot%1:06:00::	action	tie%2:35:00::
+knot%1:06:00::	result	fastening%1:06:00::
+		
+lamp%1:06:01::	action	light%2:30:00::
+lamp%1:06:01::	theme	light%1:19:00::
+lamp%1:06:01::	result	light%1:19:00::
+lamp%1:06:01::	instrument	switch%1:06:01::
+		
+laser%1:06:00::	action	light%2:30:00::
+laser%1:06:00::	action	cut%2:35:00::
+laser%1:06:00::	action	operate%2:29:00::
+laser%1:06:00::	result	light%1:19:00::
+laser%1:06:00::	result	heat%1:19:00::
+		
+leash%1:06:00::	action	restrain%2:41:01::
+leash%1:06:00::	action	lead%2:38:01::
+leash%1:06:00::	undergoer	animal%1:03:00::
+leash%1:06:00::	theme	movement%1:11:00::
+		
+leg%1:06:01::	action	support%2:35:00::
+leg%1:06:01::	theme	furniture%1:06:00::
+		
+elevator%1:06:00::	action	lift%2:38:00::
+elevator%1:06:00::	action	lift%2:35:01::
+elevator%1:06:00::	action	transport%2:35:00::
+elevator%1:06:00::	location	building%1:06:00::
+elevator%1:06:00::	location	elevator_shaft%1:06:00::
+elevator%1:06:00::	theme	passenger%1:18:00::
+elevator%1:06:00::	theme	freight%1:06:00::
+		
+lift%1:06:01::	action	lift%2:38:00::
+lift%1:06:01::	action	lift%2:35:01::
+lift%1:06:01::	action	transport%2:35:00::
+lift%1:06:01::	theme	passenger%1:18:00::
+lift%1:06:01::	location	hill%1:17:00::
+lift%1:06:01::	location	mountain%1:17:00::
+		
+light%1:06:00::	action	light%2:30:00::
+light%1:06:00::	theme	light%1:19:00::
+light%1:06:00::	result	light%1:19:00::
+		
+lighter%1:06:00::	action	light%2:43:00::
+lighter%1:06:00::	theme	fire%1:22:00::
+lighter%1:06:00::	result	combustion%1:04:00::
+		
+line%1:06:07::	action	transmit%2:38:00::
+line%1:06:07::	action	carry%2:38:03::
+line%1:06:07::	action	connect%2:32:12::
+line%1:06:07::	theme	call%1:10:01::
+line%1:06:07::	theme	telephone_call%1:10:00::
+		
+production_line%1:06:00::	action	assemble%2:36:00::
+production_line%1:06:00::	action	produce%2:36:00::
+production_line%1:06:00::	theme	article%1:03:00::
+production_line%1:06:00::	result	product%1:06:00::
+production_line%1:06:00::	agent	worker%1:18:00::
+		
+link%1:06:00::	action	link%2:35:00::
+link%1:06:00::	action	join%2:35:01::
+link%1:06:00::	result	connection%1:26:00::
+		
+lock%1:06:00::	action	lock%2:35:00::
+lock%1:06:00::	action	close%2:35:00::
+lock%1:06:00::	action	secure%2:35:01::
+lock%1:06:00::	undergoer	door%1:06:00::
+lock%1:06:00::	undergoer	drawer%1:06:00::
+lock%1:06:00::	undergoer	container%1:06:00::
+lock%1:06:00::	result	protection%1:26:00::
+		
+lounge%1:06:01::	action	seat%2:42:00::
+lounge%1:06:01::	beneficiary	people%1:14:00::
+		
+mug%1:06:00::	action	hold%2:42:14::
+mug%1:06:00::	theme	liquid%1:27:00::
+mug%1:06:00::	theme	mouse%1:06:00::
+mug%1:06:00::	action	point%2:32:00::
+mug%1:06:00::	location	computer_screen%1:06:00::
+		
+mouse%1:06:00::	action	click%2:39:00::
+mouse%1:06:00::	result	click%1:04:00::
+		
+missile%1:06:00::	action	fire%2:33:00::
+		
+missile%1:06:01::	action	fire%2:33:00::
+		
+missile%1:06:00::	action	launch%2:35:00::
+		
+missile%1:06:01::	action	launch%2:35:00::
+		
+missile%1:06:00::	action	strike%2:35:00::
+missile%1:06:00::	theme	target%1:10:00::
+missile%1:06:00::	result	destruction%1:11:00::
+		
+missile%1:06:01::	action	strike%2:35:00::
+missile%1:06:01::	theme	target%1:10:00::
+missile%1:06:01::	result	destruction%1:11:00::
+		
+missile%1:06:01::	action	explode%2:30:01::
+		
+mirror%1:06:00::	action	reflect%2:39:02::
+mirror%1:06:00::	theme	image%1:06:00::
+		
+mirror%1:06:00::	action	reveal%2:39:00::
+mirror%1:06:00::	theme	reality%1:26:01::
+		
+mine%1:06:00::	action	explode%2:30:01::
+mine%1:06:00::	location	mine_field%1:15:00::
+		
+mill%1:06:01::	action	manufacture%2:36:00::
+mill%1:06:01::	action	process%2:30:00::
+mill%1:06:01::	theme	product%1:06:00::
+		
+mill%1:06:00::	action	grind%2:35:02::
+		
+mill%1:06:00::	action	crush%2:30:00::
+		
+microphone%1:06:00::	action	pick_up%2:39:01::
+microphone%1:06:00::	theme	sound%1:07:00::
+		
+microphone%1:06:00::	action	amplify%2:30:00::
+microphone%1:06:00::	theme	sound%1:07:00::
+		
+memory%1:09:02::	action	come_back%2:30:00::
+		
+memory%1:09:02::	action	fade%2:30:00::
+		
+memory%1:09:02::	action	haunt%2:37:00::
+memory%1:09:02::	undergoer	person%1:03:00::
+		
+memory%1:06:00::	action	hold%2:42:00::
+memory%1:06:00::	theme	data%1:14:00::
+		
+measure%1:03:00::	action	evaluate%2:31:00::
+measure%1:03:00::	theme	quantity%1:03:00::
+measure%1:03:00::	theme	length%1:07:00::
+measure%1:03:00::	theme	weight%1:07:00::
+		
+maze%1:06:00::	action	wind%2:42:00::
+		
+match%1:06:00::	action	light%2:34:00::
+match%1:06:00::	theme	cigarette%1:06:00::
+		
+match%1:06:00::	action	light%2:43:00::
+match%1:06:00::	theme	wood%1:27:00::
+match%1:06:00::	theme	fire%1:22:00::
+		
+match%1:06:00::	action	strike%2:36:00::
+match%1:06:00::	result	fire%1:22:00::
+		
+match%1:11:00::	action	take_place%2:30:00::
+match%1:11:00::	location	field%1:15:02::
+		
+marble%1:06:00::	action	roll%2:38:00::
+		
+makeup%1:06:00::	action	color%2:30:00::
+makeup%1:06:00::	theme	face%1:08:00::
+		
+makeup%1:06:00::	action	cover%2:35:00::
+makeup%1:06:00::	theme	blemish%1:07:00::
+makeup%1:06:00::	location	face%1:08:00::
+		
+pump%1:06:00::	action	pump%2:35:00::
+		
+pump%1:06:00::	action	displace%2:38:00::
+pump%1:06:00::	theme	liquid%1:27:04::
+pump%1:06:00::	theme	gas%1:26:00::
+		
+pump%1:08:00::	action	circulate%2:38:01::
+pump%1:08:00::	theme	blood%1:08:00::
+		
+printer%1:06:00::	action	print%2:36:00::
+printer%1:06:00::	instrument	paper%1:27:00::
+		
+printer%1:06:01::	action	output%2:36:00::
+printer%1:06:01::	theme	data%1:14:00::
+		
+press%1:10:00::	action	report%2:32:13::
+press%1:10:00::	agent	reporter%1:18:00::
+press%1:10:00::	theme	news%1:10:01::
+press%1:10:00::	theme	story%1:10:01::
+		
+press%1:10:00::	action	publish%2:36:01::
+press%1:10:00::	theme	news%1:10:01::
+press%1:10:00::	theme	story%1:10:01::
+		
+press%1:06:00::	action	extract%2:35:05::
+press%1:06:00::	theme	liquid%1:27:04::
+		
+press%1:06:00::	action	compress%2:35:00::
+press%1:06:00::	theme	solid%1:27:04::
+		
+pot%1:06:00::	action	hold%2:42:13::
+pot%1:06:00::	theme	food%1:03:00::
+pot%1:06:00::	location	kitchen%1:06:00::
+		
+pot%1:06:04::	action	hold%2:42:13::
+pot%1:06:04::	theme	flower%1:20:00::
+		
+pole%1:06:00::	action	support%2:35:00::
+		
+pocket%1:06:00::	action	hold%2:42:13::
+		
+plane%1:06:01::	action	fly%2:38:00::
+		
+plane%1:06:01::	action	transport%2:38:00::
+plane%1:06:01::	undergoer	passenger%1:18:00::
+		
+plane%1:06:01::	action	take_off%2:38:02::
+plane%1:06:01::	location	airport%1:06:00::
+plane%1:06:01::	destination	sky%1:17:00::
+		
+plane%1:06:01::	action	land%2:38:00::
+plane%1:06:01::	destination	runway%1:06:00::
+		
+plane%1:06:00::	action	shape%2:36:00::
+plane%1:06:00::	agent	carpenter%1:18:00::
+plane%1:06:00::	theme	wood%1:27:00::
+plane%1:06:00::	location	shop%1:06:01::
+		
+pill%1:06:00::	action	cure%2:29:00::
+pill%1:06:00::	undergoer	sick%1:14:00::
+		
+pill%1:06:02::	action	prevent%2:41:01::
+pill%1:06:02::	theme	pregnancy%1:26:00::
+		
+pier%1:06:00::	action	connect%2:35:00::
+pier%1:06:00::	theme	land%1:17:00::
+pier%1:06:00::	theme	ship%1:06:00::
+		
+pier%1:06:02::	action	support%2:35:00::
+		
+pier%1:06:01::	action	support%2:35:00::
+		
+piano%1:06:00::	action	play%2:36:12::
+piano%1:06:00::	agent	pianist%1:18:00::
+piano%1:06:00::	result	music%1:09:01::
+		
+pencil%1:06:00::	action	write%2:36:00::
+		
+pencil%1:06:00::	action	draw%2:36:00::
+		
+pen%1:06:00::	action	write%2:36:00::
+		
+pen%1:06:01::	action	hold%2:42:13::
+pen%1:06:01::	theme	livestock%1:05:00::
+pen%1:06:01::	location	farm%1:06:00::
+		
+pen%1:06:03::	action	hold%2:42:13::
+pen%1:06:03::	theme	baby%1:18:00::
+		
+paper%1:10:03::	action	contain%2:42:00::
+paper%1:10:03::	theme	news%1:10:01::
+		
+paper%1:14:00::	action	publish%2:36:01::
+paper%1:14:00::	theme	news%1:10:01::
+		
+paper%1:10:02::	action	report%2:32:00::
+paper%1:10:02::	theme	result%1:10:00::
+		
+pan%1:06:01::	action	fry%2:30:00::
+pan%1:06:01::	theme	food%1:03:00::
+		
+packet%1:14:00::	action	hold%2:42:13::
+		
+packet%1:10:00::	action	contain%2:42:00::
+packet%1:10:00::	theme	data%1:14:00::
+		
+packet%1:06:01::	action	carry%1:04:00::
+packet%1:06:01::	theme	mail%1:10:01::
+		
+pack%1:06:00::	action	hold%2:42:13::
+		
+pack%1:06:02::	action	hold%2:42:13::
+		
+organ%1:06:01::	action	play%2:36:12::
+organ%1:06:01::	agent	organist%1:18:00::
+organ%1:06:01::	result	music%1:09:01::
+		
+organ%1:06:00::	action	play%2:36:12::
+organ%1:06:00::	agent	organist%1:18:00::
+organ%1:06:00::	result	music%1:09:01::
+		
+organ%1:06:02::	action	play%2:36:12::
+organ%1:06:02::	result	music%1:09:01::
+		
+notebook%1:10:00::	action	contain%2:42:13::
+notebook%1:10:00::	theme	record%1:10:03::
+notebook%1:10:00::	theme	information%1:14:00::
+notebook%1:10:00::	theme	list%1:10:00::
+		
+net%1:06:02::	action	catch%2:35:03::
+net%1:06:02::	theme	animal%1:03:00::
+net%1:06:02::	theme	insect%1:05:00::
+		
+net%1:06:04::	action	stop%2:41:00::
+net%1:06:04::	theme	ball%1:06:01::
+net%1:06:04::	location	field%1:15:02::
+		
+net%1:06:03::	action	divide%2:42:00::
+net%1:06:03::	theme	court%1:06:01::
+		
+needle%1:06:01::	action	indicate%2:32:03::
+needle%1:06:01::	theme	measurement%1:04:00::
+needle%1:06:01::	instrument	scale%1:06:00::
+		
+needle%1:06:00::	action	knit%2:36:00::
+needle%1:06:00::	theme	textile%1:06:00::
+needle%1:06:00::	theme	clothes%1:06:00::
+		
+needle%1:06:00::	action	pierce%2:35:00::
+needle%1:06:00::	theme	cloth%1:06:00::
+needle%1:06:00::	theme	flesh%1:08:02::
+		
+needle%1:06:02::	action	scratch%2:35:03::
+needle%1:06:02::	theme	record%1:06:00::
+needle%1:06:02::	result	music%1:09:01::
+		
+nail%1:08:00::	action	protect%2:33:00::
+nail%1:08:00::	theme	flesh%1:08:02::
+		
+nail%1:06:00::	action	secure%2:35:01::
+nail%1:06:00::	theme	material%1:27:00::
+nail%1:06:00::	instrument	hammer%1:06:00::
+		
+shaft%1:19:00::	action	shine%2:43:00::
+shaft%1:19:00::	result	light%1:19:00::
+		
+seat%1:06:01::	action	seat%2:42:00::
+seat%1:06:01::	undergoer	person%1:03:00::
+		
+seat%1:06:02::	action	cover%2:35:00::
+seat%1:06:02::	theme	buttocks%1:08:00::
+		
+screw%1:06:00::	action	fasten%2:35:01::
+screw%1:06:00::	instrument	screwdriver%1:06:00::
+screw%1:06:00::	agent	carpenter%1:18:00::
+		
+screen%1:06:06::	action	show%2:39:02::
+screen%1:06:06::	theme	film%1:10:01::
+screen%1:06:06::	beneficiary	audience%1:14:00::
+screen%1:06:06::	result	movie%1:10:00::
+screen%1:06:06::	instrument	projector%1:06:00::
+		
+screen%1:06:04::	action	hide%2:39:00::
+		
+screen%1:06:01::	action	hide%2:39:00::
+		
+screen%1:06:04::	action	cover%2:35:00::
+		
+screen%1:06:01::	action	cover%2:35:00::
+		
+screen%1:06:07::	action	open%2:35:06::
+		
+screen%1:06:07::	action	close%2:35:06::
+		
+screen%1:06:07::	action	block%2:35:12::
+screen%1:06:07::	undergoer	bug%1:05:02::
+		
+scale%1:06:02::	action	measure%2:31:00::
+scale%1:06:02::	result	mass%1:07:00::
+		
+scale%1:06:02::	action	weigh%2:42:00::
+scale%1:06:02::	result	mass%1:07:00::
+		
+scale%1:05:00::	action	cover%2:35:01::
+scale%1:05:00::	theme	reptile%1:05:00::
+		
+satellite%1:06:00::	action	orbit%2:38:00::
+satellite%1:06:00::	theme	planet%1:17:01::
+satellite%1:06:00::	location	space%1:15:01::
+		
+rocket%1:06:01::	action	launch%2:35:00::
+		
+rocket%1:06:01::	action	blast_off%2:35:00::
+		
+rocket%1:10:02::	action	shoot%2:33:00::
+rocket%1:10:02::	theme	light%1:06:00::
+rocket%1:10:02::	destination	rescue%1:04:00::
+		
+rocket%1:06:02::	action	shoot%2:33:00::
+rocket%1:06:02::	theme	firework%1:06:00::
+rocket%1:06:02::	location	celebration%1:11:00::
+		
+rifle%1:06:00::	action	fire%2:33:00::
+rifle%1:06:00::	theme	bullet%1:06:00::
+rifle%1:06:00::	destination	target%1:10:00::
+		
+register%1:21:00::	action	hold%2:42:13::
+register%1:21:00::	theme	transaction%1:04:00::
+register%1:21:00::	agent	bookkeeper%1:18:00::
+register%1:21:00::	destination	record%1:10:03::
+		
+register%1:06:00::	action	regulate%2:30:00::
+register%1:06:00::	theme	air%1:27:00::
+register%1:06:00::	location	heater%1:06:00::
+		
+register%1:06:02::	action	hold%2:42:13::
+register%1:06:02::	theme	money%1:21:00::
+register%1:06:02::	location	store%1:06:00::
+register%1:06:02::	agent	cashier%1:18:01::
+		
+recording%1:06:00::	action	play_back%2:36:00::
+recording%1:06:00::	theme	music%1:10:00::
+recording%1:06:00::	theme	film%1:10:01::
+		
+reactor%1:06:01::	action	generate%2:36:01::
+reactor%1:06:01::	theme	energy%1:19:00::
+		
+reactor%1:06:00::	action	control%2:41:00::
+reactor%1:06:00::	theme	nuclear_reaction%1:22:00::
+reactor%1:06:00::	result	energy%1:19:00::
+		
+railcar%1:06:00::	action	carry%2:35:02::
+railcar%1:06:00::	theme	cargo%1:06:00::
+railcar%1:06:00::	theme	passenger%1:18:00::
+		
+railcar%1:06:00::	action	jump%2:38:05::
+railcar%1:06:00::	theme	track%1:06:01::
+		
+radio%1:06:01::	action	play%2:36:11::
+radio%1:06:01::	theme	music%1:10:00::
+		
+radio%1:06:01::	action	broadcast%2:32:01::
+		
+radio%1:06:01::	action	transmit%2:40:10::
+radio%1:06:01::	theme	signal%1:19:00::
+		
+radio%1:06:00::	action	transmit%2:40:10::
+radio%1:06:00::	theme	signal%1:19:00::
+		
+tool%1:06:00::	action	make%2:36:00::
+tool%1:06:00::	agent	person%1:03:00::
+		
+tool%1:06:00::	action	help%2:41:00::
+tool%1:06:00::	experiencer	person%1:03:00::
+		
+tool%1:06:00::	action	repair%2:30:00::
+		
+tin%1:06:03::	action	hold%2:42:14::
+tin%1:06:03::	theme	food%1:03:00::
+		
+tin%1:06:01::	action	hold%2:42:14::
+tin%1:06:01::	theme	food%1:03:00::
+		
+throne%1:06:00::	action	seat%2:42:00::
+throne%1:06:00::	undergoer	royalty%1:14:00::
+		
+terminal%1:06:00::	action	hold%2:42:14::
+terminal%1:06:00::	theme	vehicle%1:06:00::
+		
+terminal%1:06:02::	action	display%2:39:00::
+terminal%1:06:02::	theme	image%1:06:00::
+		
+television%1:06:01::	action	broadcast%2:32:01::
+television%1:06:01::	theme	television_show%1:10:00::
+television%1:06:01::	experiencer	person%1:03:00::
+		
+telephone%1:06:00::	action	ring%2:39:00::
+		
+telephone%1:06:00::	action	connect%2:32:12::
+telephone%1:06:00::	agent	person%1:03:00::
+telephone%1:06:00::	experiencer	person%1:03:00::
+		
+taxi%1:06:00::	agent	driver%1:18:00::
+taxi%1:06:00::	action	transport%2:35:00::
+taxi%1:06:00::	undergoer	people%1:14:00::
+		
+taxi%1:06:00::	action	charge%2:40:03::
+taxi%1:06:00::	theme	rate%1:21:00::
+taxi%1:06:00::	result	transportation%1:04:00::
+		
+tape%1:06:00::	action	stick%2:35:00::
+		
+tape%1:06:01::	action	play%2:36:11::
+tape%1:06:01::	theme	music%1:10:00::
+tape%1:06:01::	experiencer	audience%1:14:00::
+tape%1:06:01::	instrument	speaker%1:06:00::
+		
+tape%1:15:00::	action	mark%2:32:02::
+tape%1:15:00::	theme	finish_line%1:15:00::
+		
+tap%1:06:00::	action	draw%2:38:00::
+tap%1:06:00::	theme	water%1:27:00::
+tap%1:06:00::	location	sink%1:06:00::
+		
+tap%1:06:00::	action	drip%2:38:00::
+tap%1:06:00::	theme	water%1:27:00::
+		
+tap%1:06:03::	action	click%2:39:00::
+tap%1:06:03::	location	shoe%1:06:00::
+tap%1:06:03::	agent	person%1:03:00::
+		
+tap%1:06:02::	action	cut%2:36:01::
+tap%1:06:02::	undergoer	screw%1:06:02::
+tap%1:06:02::	result	screw_thread%1:06:00::
+		
+tank%1:06:01::	action	transport%2:38:00::
+tank%1:06:01::	undergoer	military_personnel%1:14:00::
+		
+tank%1:06:01::	action	roll%2:38:00::
+tank%1:06:01::	instrument	caterpillar_tread%1:06:00::
+		
+tank%1:06:01::	action	fire%2:33:00::
+tank%1:06:01::	instrument	cannon%1:06:03::
+tank%1:06:01::	agent	soldier%1:18:00::
+tank%1:06:01::	undergoer	enemy%1:18:00::
+		
+tank%1:06:00::	action	contain%2:42:13::
+tank%1:06:00::	theme	liquid%1:27:04::
+tank%1:06:00::	theme	gas%1:26:00::
+		
+tank%1:06:03::	action	hold%2:42:14::
+tank%1:06:03::	undergoer	prisoner%1:18:00::
+tank%1:06:03::	result	punishment%1:04:00::
+		
+table%1:06:01::	action	display%2:39:00::
+table%1:06:01::	theme	food%1:03:00::
+table%1:06:01::	theme	art%1:06:00::
+		
+table%1:06:02::	action	seat%2:42:00::
+table%1:06:02::	theme	diner%1:18:00::
+		
+sword%1:06:00::	action	kill%2:35:00::
+sword%1:06:00::	undergoer	enemy%1:18:00::
+		
+sword%1:06:00::	action	pierce%2:35:02::
+sword%1:06:00::	undergoer	enemy%1:18:00::
+		
+switch%1:06:01::	action	flip%2:35:01::
+switch%1:06:01::	experiencer	electricity%1:19:01::
+switch%1:06:01::	result	on%3:00:00::
+switch%1:06:01::	result	off%3:00:00::
+		
+switch%1:06:02::	action	turn%2:38:00::
+switch%1:06:02::	experiencer	train%1:06:00::
+		
+switch%1:06:00::	action	crack%2:35:00::
+switch%1:06:00::	result	punishment%1:04:00::
+		
+swing%1:06:00::	action	swing%2:38:00::
+swing%1:06:00::	experiencer	child%1:18:00::
+swing%1:06:00::	location	playground%1:06:00::
+		
+support%1:06:01::	action	hold_up%2:35:00::
+support%1:06:01::	result	stability%1:07:00::
+		
+stool%1:06:00::	action	seat%2:42:00::
+stool%1:06:00::	theme	person%1:03:00::
+		
+stick%1:06:03::	action	control%2:35:00::
+stick%1:06:03::	undergoer	machine%1:06:00::
+		
+stick%1:06:04::	action	hit%2:35:03::
+stick%1:06:04::	theme	ball%1:06:01::
+stick%1:06:04::	agent	hockey_player%1:18:00::
+stick%1:06:04::	location	skating_rink%1:06:00::
+		
+spring%1:17:00::	action	flow%2:38:00::
+		
+spring%1:17:00::	action	provide%2:40:00::
+spring%1:17:00::	theme	water%1:27:00::
+spring%1:17:00::	beneficiary	community%1:14:02::
+		
+spoon%1:06:00::	action	scoop%2:35:01::
+spoon%1:06:00::	theme	food%1:03:00::
+spoon%1:06:00::	agent	person%1:03:00::
+		
+speaker%1:06:00::	action	play%2:36:11::
+speaker%1:06:00::	theme	music%1:10:00::
+speaker%1:06:00::	experiencer	audience%1:14:00::
+		
+ski%1:06:00::	action	glide%2:38:00::
+ski%1:06:00::	location	mountain%1:17:00::
+ski%1:06:00::	instrument	snow%1:27:00::
+		
+ski%1:06:00::	action	glide%2:38:00::
+ski%1:06:00::	location	water%1:17:00::
+ski%1:06:00::	instrument	boat%1:06:00::
+		
+shell%1:06:00::	action	fire%2:33:00::
+shell%1:06:00::	instrument	gun%1:06:00::
+shell%1:06:00::	undergoer	enemy%1:18:00::
+		
+shell%1:27:00::	action	protect%2:33:00::
+shell%1:27:00::	undergoer	animal%1:03:00::
+		
+shell%1:05:02::	action	protect%2:33:00::
+shell%1:05:02::	undergoer	animal%1:03:00::
+		
+shell%1:20:00::	action	protect%2:33:00::
+shell%1:20:00::	undergoer	fruit%1:20:00::
+shell%1:20:00::	undergoer	nut%1:20:00::
+		
+shell%1:06:03::	action	race%2:33:00::
+shell%1:06:03::	agent	rower%1:18:00::
+shell%1:06:03::	location	water%1:17:00::
+		
+shelf%1:06:00::	action	hold%2:35:01::
+		
+whip%1:06:00::	action	crack%2:39:01::
+		
+wheel%1:06:00::	action	rotate%2:38:01::
+		
+wheel%1:06:00::	action	roll%2:38:01::
+		
+wheel%1:06:05::	action	steer%2:38:00::
+wheel%1:06:05::	agent	driver%1:18:00::
+		
+weight%1:06:01::	action	lift%1:11:00::
+weight%1:06:01::	result	muscle%1:07:00::
+weight%1:06:01::	location	gymnasium%1:06:00::
+		
+weight%1:06:00::	action	weigh_down%2:35:00::
+		
+weight%1:06:00::	action	drop%2:38:01::
+		
+weapon%1:06:00::	action	fire%2:33:00::
+		
+weapon%1:06:00::	action	hurt%2:29:01::
+		
+weapon%1:06:00::	action	kill%2:35:00::
+		
+weapon%1:06:00::	action	threaten%2:42:00::
+weapon%1:06:00::	undergoer	enemy%1:14:00::
+weapon%1:06:00::	undergoer	enemy%1:18:01::
+		
+watch%1:06:00::	action	tell%2:32:00::
+watch%1:06:00::	theme	time%1:28:03::
+watch%1:06:00::	location	wrist%1:08:00::
+		
+wagon%1:06:00::	action	transport%2:38:00::
+wagon%1:06:00::	theme	people%1:14:00::
+wagon%1:06:00::	theme	good%1:06:00::
+		
+wagon%1:06:00::	action	roll%2:38:01::
+wagon%1:06:00::	location	road%1:06:00::
+		
+video%1:06:00::	action	show%2:39:02::
+video%1:06:00::	theme	film%1:10:01::
+video%1:06:00::	location	screen%1:06:06::
+video%1:06:00::	location	screen%1:06:05::
+		
+video%1:06:00::	action	feature%2:42:00::
+video%1:06:00::	theme	actor%1:18:00::
+		
+vessel%1:06:00::	action	transport%2:38:00::
+vessel%1:06:00::	location	water%1:17:00::
+vessel%1:06:00::	theme	people%1:14:00::
+vessel%1:06:00::	theme	good%1:06:00::
+		
+vessel%1:06:01::	action	contain%2:42:13::
+		
+vehicle%1:06:00::	action	transport%2:38:00::
+vehicle%1:06:00::	agent	driver%1:18:00::
+vehicle%1:06:00::	theme	people%1:14:00::
+vehicle%1:06:00::	theme	good%1:06:00::
+		
+vehicle%1:06:00::	action	travel%1:04:00::
+vehicle%1:06:00::	agent	driver%1:18:00::
+		
+vehicle%1:17:00::	action	transmit%2:40:10::
+vehicle%1:17:00::	undergoer	disease%1:26:00::
+vehicle%1:17:00::	experiencer	person%1:08:00::
+		
+vat%1:06:00::	action	contain%2:42:13::
+vat%1:06:00::	theme	liquid%1:27:00::
+		
+van%1:14:01::	action	innovate%2:36:00::
+		
+van%1:06:02::	action	carry%1:04:00::
+van%1:06:02::	theme	cargo%1:06:00::
+		
+van%1:06:00::	action	carry%1:04:00::
+van%1:06:00::	theme	cargo%1:06:00::
+		
+van%1:06:01::	action	house%2:41:00::
+van%1:06:01::	theme	people%1:14:00::
+		
+van%1:06:02::	action	transport%2:38:00::
+van%1:06:02::	agent	driver%1:18:00::
+van%1:06:02::	theme	people%1:14:00::
+van%1:06:02::	theme	good%1:06:00::
+		
+van%1:06:00::	action	transport%2:38:00::
+van%1:06:00::	agent	driver%1:18:00::
+van%1:06:00::	theme	people%1:14:00::
+van%1:06:00::	theme	good%1:06:00::
+		
+van%1:06:01::	action	transport%2:38:00::
+van%1:06:01::	agent	driver%1:18:00::
+van%1:06:01::	theme	people%1:14:00::
+van%1:06:01::	theme	good%1:06:00::
+		
+truck%1:06:00::	action	transport%2:38:00::
+truck%1:06:00::	agent	driver%1:18:00::
+truck%1:06:00::	theme	people%1:14:00::
+truck%1:06:00::	theme	good%1:06:00::
+		
+truck%1:06:00::	action	carry%1:04:00::
+truck%1:06:00::	theme	cargo%1:06:00::
+		
+truck%1:06:00::	action	deliver%2:35:00::
+		
+truck%1:06:01::	action	move%2:38:03::
+truck%1:06:01::	theme	cargo%1:06:00::
+		
+trolley%1:06:00::	action	transport%2:38:00::
+trolley%1:06:00::	theme	people%1:14:00::
+		
+tray%1:06:00::	action	carry%2:35:02::
+tray%1:06:00::	theme	food%1:03:00::
+		
+tray%1:06:00::	action	display%2:39:00::
+		
+trap%1:06:00::	action	catch%2:35:01::
+trap%1:06:00::	undergoer	animal%1:03:00::
+		
+trap%1:09:00::	action	trick%2:41:00::
+trap%1:09:00::	result	deception%1:10:00::
+		
+trap%1:06:03::	action	hurl%2:35:00::
+trap%1:06:03::	theme	clay_pigeon%1:06:00::
+trap%1:06:03::	beneficiary	trapshooter%1:18:00::
+		
+transmission%1:06:01::	action	transmit%2:38:00::
+transmission%1:06:01::	theme	power%1:18:00::
+transmission%1:06:01::	source	engine%1:06:00::
+transmission%1:06:01::	destination	axle%1:06:00::
+transmission%1:06:01::	location	car%1:06:00::
+		
+train%1:06:00::	action	transport%2:38:00::
+train%1:06:00::	theme	people%1:14:00::
+train%1:06:00::	source	train_station%1:06:00::
+train%1:06:00::	destination	train_station%1:06:00::
+train%1:06:00::	location	track%1:06:02::
+		
+train%1:06:02::	action	trail%2:35:05::
+train%1:06:02::	location	gown%1:06:00::
+		
+torch%1:06:02::	action	hold%2:42:13::
+torch%1:06:02::	theme	flame%1:22:00::
+torch%1:06:02::	result	light%1:19:00::
+		
+torch%1:06:02::	action	burn%2:43:01::
+		
+torch%1:06:02::	action	illuminate%2:30:03::
+torch%1:06:02::	result	light%1:19:00::
+		
+wing%1:06:00::	action	lift%2:38:00::
+wing%1:06:00::	beneficiary	aircraft%1:06:00::
+wing%1:06:00::	result	flight%1:04:00::
+wing%1:06:00::	cause	lift%1:19:00::
+		
+wire%1:06:00::	action	fasten%2:35:01::
+wire%1:06:00::	action	shape%2:36:00::
+wire%1:06:00::	result	fastening%1:06:00::
+		
+yacht%1:06:00::	action	sail%2:38:03::
+yacht%1:06:00::	action	cruise%2:38:01::
+yacht%1:06:00::	action	travel%2:38:04::
+yacht%1:06:00::	action	transport%2:38:00::
+yacht%1:06:00::	action	race%2:33:00::
+yacht%1:06:00::	theme	passenger%1:18:00::
+yacht%1:06:00::	instrument	sail%1:06:00::
+yacht%1:06:00::	agent	captain%1:18:03::
