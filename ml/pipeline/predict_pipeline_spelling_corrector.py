@@ -11,8 +11,8 @@ class SpellingPredictPipeline:
 
     def load_model(self):
         """Load the spelling correction model and preprocessor."""
-        model_path = "artifacts/spelling_corrector.pkl"
-        preprocessor_path = "artifacts/preprocessor.pkl"
+        model_path = "artifacts/spelling_model.pkl"
+        preprocessor_path = "artifacts/spelling_preprocessor.pkl"
 
         if os.path.exists(model_path) and os.path.exists(preprocessor_path):
             with open(model_path, "rb") as f:
