@@ -89,12 +89,21 @@ def spelling_corrector():
     text = data.get("text", "")
 
     if not text:
+        print("Error: No text provided")  # Debug log
         return jsonify({"error": "No text provided"}), 400
 
     try:
         corrected_text = spelling_pipeline.predict(text)
-        return jsonify({"corrected_text": corrected_text})
+        
+        # Debug logs
+        print("Input Text:", text)
+        print("Corrected Text:", corrected_text)
+        response = {"corrected_text": corrected_text}
+        print("Response:", json.dumps(response))  # Log full response
+        
+        return jsonify(response)
     except Exception as e:
+        print("Error in spelling_corrector:", str(e))  # Log actual error
         return jsonify({"error": str(e)}), 500
 
 """
