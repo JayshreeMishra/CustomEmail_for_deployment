@@ -22,15 +22,15 @@ def error_message_detail(error, error_detail: sys):
 
 
 class CustomException(Exception):
-    def __init__(self, error_message, error_detail: sys):
-        super().__init__(error_message)
-        try:
-            self.error_message = error_message_detail(
-                error_message, error_detail=error_detail
-            )
-        except Exception as exc:
-            # Fallback if error_message_detail fails
-            self.error_message = f"{error_message}. Additionally, failed to generate detailed traceback: {exc}"
+    def __init__(self, message, sys_info):
+        super().__init__(message)
+        self.message = message
+        self.sys_info = sys_info
+
+    def to_dict(self):
+        """Return error message as a dictionary."""
+        return {"error": self.message}
+
 
     def __str__(self):
         return self.error_message

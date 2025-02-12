@@ -85,31 +85,25 @@ def spam_detection():
 # Route for spelling correction
 @app.route('/spelling_correction', methods=['POST'])
 def spelling_corrector():
-    data = request.json
-    text = data.get("text", "")
-
-    if not text:
-        print("Error: No text provided")  # Debug log
-        return jsonify({"error": "No text provided"}), 400
-
     try:
-        corrected_text = spelling_pipeline.predict(text)
-        
-        # Debug logs
-        print("Input Text:", text)
-        print("Corrected Text:", corrected_text)
-        response = {"corrected_text": corrected_text}
-        print("Response:", json.dumps(response))  # Log full response
-        
-        return jsonify(response)
-    except Exception as e:
-        print("Error in spelling_corrector:", str(e))  # Log actual error
-        return jsonify({"error": str(e)}), 500
+        data = request.json
+        text = data.get("text", "")
 
-"""
-if __name__ == '__main__':
-    app.run(debug=True)
-"""
+        if not text:
+            return jsonify({"error": "No text provided"}), 400
+
+        corrected_text, changed_words = spelling_pipeline.predict(text)
+
+        return jsonify({
+            "corrected_text": corrected_text,
+            "changed_words": changed_words
+        })
+
+    except CustomException as e:
+        return jsonify(e.to_dict()), 500  # Returns JSON instead of HTML
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500  # Handles unknown errors
 
 #Use Render's assigned port for deployment
 if __name__ == '__main__':

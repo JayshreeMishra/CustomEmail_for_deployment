@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 import pickle
 import pandas as pd
 from config.exception import CustomException
@@ -7,27 +8,46 @@ class SpellingPredictPipeline:
     def __init__(self):
         self.model = None
         self.preprocessor = None
-        self.load_model()  # Load the model only once during initialization
 
     def load_model(self):
-        """Load the spelling correction model and preprocessor."""
-        model_path = "artifacts/spelling_model.pkl"
-        preprocessor_path = "artifacts/spelling_preprocessor.pkl"
+        """Load the model and preprocessor only when needed, and release memory after use."""
+        model_path = os.path.join("artifacts", "spelling_model.pkl")
+        preprocessor_path = os.path.join("artifacts", "spelling_preprocessor.pkl")
 
-        if os.path.exists(model_path) and os.path.exists(preprocessor_path):
-            with open(model_path, "rb") as f:
-                self.model = pickle.load(f)
-            with open(preprocessor_path, "rb") as f:
-                self.preprocessor = pickle.load(f)
-        else:
-            raise FileNotFoundError("Model or preprocessor not found!")
+        if not os.path.exists(model_path) or not os.path.exists(preprocessor_path):
+            print("❌ Model or preprocessor file is missing!")
+            raise CustomException("Model files not found!", sys)
+
+        try:
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)  # Load model temporarily
+            
+            with open(preprocessor_path, 'rb') as f:
+                preprocessor = pickle.load(f)  # Load preprocessor temporarily
+
+            return model, preprocessor  # Return loaded objects
+        except Exception as e:
+            raise CustomException(e, sys)
 
     def predict(self, text):
-        """Perform spelling correction on the given text."""
-        if not self.model or not self.preprocessor:
-            raise ValueError("Model or preprocessor is not loaded properly.")
+        """Load model only when needed and release memory after use."""
+        try:
+            model, preprocessor = self.load_model()  # Load model dynamically
+            preprocessed_text = preprocessor.transform(pd.Series([text]))[0]
 
-        processed_text = self.preprocessor.transform([text])  # Apply transformations
-        corrected_text = self.model.correct(processed_text)  # Run model prediction
-        
-        return corrected_text  # Return corrected text
+            if not isinstance(preprocessed_text, str):
+                preprocessed_text = str(preprocessed_text)
+
+            # Correct spelling
+            spelling_corrected_text, changed_words = model.correct_spelling(preprocessed_text)
+
+            # Correct grammar (optional)
+            grammar_corrected_text, _ = model.correct_grammar(spelling_corrected_text)
+
+            del model  # Free memory
+            del preprocessor  # Free memory
+
+            return grammar_corrected_text, changed_words
+
+        except Exception as e:
+            raise CustomException(e, sys)
