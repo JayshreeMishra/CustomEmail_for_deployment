@@ -85,16 +85,17 @@ def spam_detection():
 # Route for spelling correction
 @app.route('/spelling_correction', methods=['POST'])
 def spelling_corrector():
+    data = request.json
+    text = data.get("text", "")
+
+    if not text:
+        return jsonify({"error": "No text provided"}), 400
+
     try:
-        data = request.get_json()
-        text = data.get('text', '')
-        corrected_text, changed_words = spelling_pipeline.predict(text)
-        return jsonify({
-            'corrected_text': corrected_text,
-            'changed_words': changed_words
-        })
+        corrected_text = spelling_pipeline.predict(text)
+        return jsonify({"corrected_text": corrected_text})
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({"error": str(e)}), 500
 
 """
 if __name__ == '__main__':
