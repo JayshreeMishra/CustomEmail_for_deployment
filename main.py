@@ -71,18 +71,11 @@ def index():
 
     return render_template('email_form.html')
 
-# Route for spam detection
-@app.route('/spam_detection', methods=['POST'])
-def spam_detection():
-    try:
-        data = request.get_json()
-        text = data.get('text', '')
-        is_spam = spam_pipeline.predict(text)
-        return jsonify({'is_spam': bool(is_spam[0])})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+import logging
 
-# Route for spelling correction
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
 @app.route('/spelling_correction', methods=['POST'])
 def spelling_corrector():
     try:
@@ -100,10 +93,12 @@ def spelling_corrector():
         })
 
     except CustomException as e:
+        app.logger.error(f"CustomException: {str(e)}")
         return jsonify(e.to_dict()), 500  # Returns JSON instead of HTML
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500  # Handles unknown errors
+        app.logger.error(f"Unexpected error: {str(e)}")
+        return jsonify({"error": "An unexpected error occurred."}), 500  # Handles unknown errors
 
 #Use Render's assigned port for deployment
 if __name__ == '__main__':
