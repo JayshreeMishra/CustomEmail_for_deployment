@@ -49,11 +49,11 @@ def index():
             file = request.files.get('file')
             attachment = None
 
-            if file:
-                file_name = secure_filename(file.filename)
-                file_path = os.path.join(upload_folder, file_name)
+            if file and file.filename != '':
+                # Save the file temporarily
+                file_path = os.path.join(upload_folder, file.filename)
                 file.save(file_path)
-                attachment = file_path
+                attachment = file_path  # Store the file path for sending email
 
             if recipients and subject and message:
                 try:
@@ -64,6 +64,10 @@ def index():
                 result = "All fields are required!"
 
             flash(result, "success" if "successfully" in result else "danger")
+
+            # Delete the file after processing
+            if attachment and os.path.exists(attachment):
+                os.remove(attachment)
 
         except Exception as e:
             print(f"Unexpected error: {str(e)}") 
