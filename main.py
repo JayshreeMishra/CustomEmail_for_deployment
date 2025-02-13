@@ -104,6 +104,33 @@ def spelling_corrector():
         app.logger.error(f"Unexpected error: {str(e)}")
         return jsonify({"error": "An unexpected error occurred."}), 500  # Handles unknown errors
 
+@app.route('/spam_detection', methods=['POST'])
+def spam_detection():
+    try:
+        data = request.get_json()
+        
+        # Check if the request contains the required data
+        if not data or 'text' not in data:
+            return jsonify({'error': 'No text provided'}), 400
+
+        text = data['text']
+        
+        # Call the spam prediction pipeline
+        is_spam = spam_pipeline.predict(text)
+
+        # Return the result as JSON
+        return jsonify({'is_spam': bool(is_spam[0])})
+
+    except CustomException as e:
+        # Log the custom exception and return a structured error response
+        app.logger.error(f"CustomException: {str(e)}")
+        return jsonify(e.to_dict()), 500  # Returns JSON instead of HTML
+
+    except Exception as e:
+        # Log unexpected errors and return a generic error response
+        app.logger.error(f"Unexpected error: {str(e)}")
+        return jsonify({'error': 'An unexpected error occurred.'}), 500  # Handles unknown errors
+    
 #Use Render's assigned port for deployment
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))

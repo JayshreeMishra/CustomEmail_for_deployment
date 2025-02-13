@@ -6,46 +6,41 @@ from config.exception import CustomException
 
 class SpellingPredictPipeline:
     def __init__(self):
-        self.model = None
-        self.preprocessor = None
+        self.model, self.preprocessor = self.load_model()  # Load model once during initialization
 
     def load_model(self):
-        """Load the model and preprocessor only when needed, and release memory after use."""
+        """Load the model and preprocessor only once."""
         model_path = os.path.join("artifacts", "spelling_model.pkl")
         preprocessor_path = os.path.join("artifacts", "spelling_preprocessor.pkl")
 
         if not os.path.exists(model_path) or not os.path.exists(preprocessor_path):
-            print("❌ Model or preprocessor file is missing!")
             raise CustomException("Model files not found!", sys)
 
         try:
             with open(model_path, 'rb') as f:
-                model = pickle.load(f)  # Load model temporarily
-            
-            with open(preprocessor_path, 'rb') as f:
-                preprocessor = pickle.load(f)  # Load preprocessor temporarily
+                model = pickle.load(f)
 
-            return model, preprocessor  # Return loaded objects
+            with open(preprocessor_path, 'rb') as f:
+                preprocessor = pickle.load(f)
+
+            return model, preprocessor
+
         except Exception as e:
             raise CustomException(e, sys)
 
     def predict(self, text):
-        """Load model only when needed and release memory after use."""
+        """Use the already loaded model for prediction."""
         try:
-            model, preprocessor = self.load_model()  # Load model dynamically
-            preprocessed_text = preprocessor.transform(pd.Series([text]))[0]
+            preprocessed_text = self.preprocessor.transform(pd.Series([text]))[0]
 
             if not isinstance(preprocessed_text, str):
                 preprocessed_text = str(preprocessed_text)
 
             # Correct spelling
-            spelling_corrected_text, changed_words = model.correct_spelling(preprocessed_text)
+            spelling_corrected_text, changed_words = self.model.correct_spelling(preprocessed_text)
 
             # Correct grammar (optional)
-            grammar_corrected_text, _ = model.correct_grammar(spelling_corrected_text)
-
-            del model  # Free memory
-            del preprocessor  # Free memory
+            grammar_corrected_text, _ = self.model.correct_grammar(spelling_corrected_text)
 
             return grammar_corrected_text, changed_words
 
