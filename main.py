@@ -133,5 +133,7 @@ def spam_detection():
     
 #Use Render's assigned port for deployment
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))
+    port = os.environ.get("PORT", "Not Set")
+    print(f"🚀 Starting server on port: {port}")  # Debugging log
+    port = int(port) if port.isdigit() else 10000  # Default to 10000 if missing
     app.run(host="0.0.0.0", port=port)
