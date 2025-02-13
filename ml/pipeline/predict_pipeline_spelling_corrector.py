@@ -2,14 +2,23 @@ import sys
 import os
 import pickle
 import pandas as pd
+import time
 from config.exception import CustomException
 
 class SpellingPredictPipeline:
     def __init__(self):
-        self.model, self.preprocessor = self.load_model()  # Load model once during initialization
+        self.model = None
+        self.preprocessor = None
+        self.last_loaded_time = None  # Track when model was loaded
+        self.model_ttl = 300  # Model expires after 5 minutes
 
     def load_model(self):
-        """Load the model and preprocessor only once."""
+        """Load model only if not already loaded or if expired."""
+        if self.model and self.preprocessor:
+            elapsed_time = time.time() - self.last_loaded_time
+            if elapsed_time < self.model_ttl:
+                return  # Reuse the model to avoid unnecessary reloading
+
         model_path = os.path.join("artifacts", "spelling_model.pkl")
         preprocessor_path = os.path.join("artifacts", "spelling_preprocessor.pkl")
 
@@ -18,28 +27,27 @@ class SpellingPredictPipeline:
 
         try:
             with open(model_path, 'rb') as f:
-                model = pickle.load(f)
+                self.model = pickle.load(f)
 
             with open(preprocessor_path, 'rb') as f:
-                preprocessor = pickle.load(f)
+                self.preprocessor = pickle.load(f)
 
-            return model, preprocessor
+            self.last_loaded_time = time.time()  # Update load time
+            print("✅ Model loaded successfully!")
 
         except Exception as e:
             raise CustomException(e, sys)
 
     def predict(self, text):
-        """Use the already loaded model for prediction."""
+        """Load model if needed and predict."""
         try:
+            self.load_model()  # Load model if expired or not loaded
             preprocessed_text = self.preprocessor.transform(pd.Series([text]))[0]
 
             if not isinstance(preprocessed_text, str):
                 preprocessed_text = str(preprocessed_text)
 
-            # Correct spelling
             spelling_corrected_text, changed_words = self.model.correct_spelling(preprocessed_text)
-
-            # Correct grammar (optional)
             grammar_corrected_text, _ = self.model.correct_grammar(spelling_corrected_text)
 
             return grammar_corrected_text, changed_words
