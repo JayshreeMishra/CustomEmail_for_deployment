@@ -11,3 +11,75 @@
 [2025-02-10 17:23:17,358: INFO: _internal: 192.168.43.221 - - [10/Feb/2025 17:23:17] "GET /static/i_icon.png HTTP/1.1" 200 -]
 [2025-02-10 17:23:17,403: INFO: _internal: 192.168.43.221 - - [10/Feb/2025 17:23:17] "GET /static/linkedin_icon.png HTTP/1.1" 200 -]
 [2025-02-10 17:23:22,769: INFO: _internal: 192.168.43.221 - - [10/Feb/2025 17:23:22] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:15:43,134: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.43.221:10000]
+[2025-02-14 13:15:43,135: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-02-14 13:16:05,585: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:05] "GET / HTTP/1.1" 200 -]
+[2025-02-14 13:16:07,561: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:07] "GET /static/i_icon.png HTTP/1.1" 200 -]
+[2025-02-14 13:16:07,561: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:07] "GET /static/styles.css HTTP/1.1" 200 -]
+[2025-02-14 13:16:07,571: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:07] "GET /static/placeholder.js HTTP/1.1" 200 -]
+[2025-02-14 13:16:07,641: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:07] "GET /static/logo.png HTTP/1.1" 200 -]
+[2025-02-14 13:16:07,927: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:07] "GET /static/git_icon.png HTTP/1.1" 200 -]
+[2025-02-14 13:16:07,957: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:07] "GET /static/linkedin_icon.png HTTP/1.1" 200 -]
+[2025-02-14 13:16:10,414: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:10] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:16:25,331: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:25] "POST /spam_detection HTTP/1.1" 200 -]
+[2025-02-14 13:16:44,741: ERROR: app: Exception on /spelling_correction [POST]]
+Traceback (most recent call last):
+  File "C:\Users\jaysh\All_Projects\Current_Projects\CustomEmail_for_deployment\ml\pipeline\predict_pipeline_spelling_corrector.py", line 51, in predict
+    grammar_corrected_text, _ = self.model.correct_grammar(spelling_corrected_text)
+AttributeError: 'SpellingModel' object has no attribute 'correct_grammar'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jaysh\All_Projects\Current_Projects\CustomEmail_for_deployment\main.py", line 92, in spelling_corrector
+    corrected_text, changed_words = spelling_pipeline.predict(text)
+  File "C:\Users\jaysh\All_Projects\Current_Projects\CustomEmail_for_deployment\ml\pipeline\predict_pipeline_spelling_corrector.py", line 56, in predict
+    raise CustomException(e, sys)
+config.exception.CustomException: <unprintable CustomException object>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sushi\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\sushi\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\sushi\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\sushi\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\jaysh\All_Projects\Current_Projects\CustomEmail_for_deployment\main.py", line 100, in spelling_corrector
+    app.logger.error(f"CustomException: {str(e)}")
+TypeError: __str__ returned non-string (type AttributeError)
+[2025-02-14 13:16:44,745: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:16:44] "[35m[1mPOST /spelling_correction HTTP/1.1[0m" 500 -]
+[2025-02-14 13:20:20,124: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.43.221:10000]
+[2025-02-14 13:20:20,125: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-02-14 13:20:29,708: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:29] "GET / HTTP/1.1" 200 -]
+[2025-02-14 13:20:31,929: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:31] "[36mGET /static/linkedin_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:20:31,934: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:31] "[36mGET /static/placeholder.js HTTP/1.1[0m" 304 -]
+[2025-02-14 13:20:31,941: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:31] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:20:31,955: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:31] "[36mGET /static/git_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:20:31,957: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:31] "[36mGET /static/i_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:20:31,965: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -]
+[2025-02-14 13:20:34,264: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:20:34] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:21:04,308: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:21:04] "POST /spam_detection HTTP/1.1" 200 -]
+[2025-02-14 13:21:18,811: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:21:18] "POST /spelling_correction HTTP/1.1" 200 -]
+[2025-02-14 13:22:36,810: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.43.221:10000]
+[2025-02-14 13:22:36,811: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-02-14 13:23:02,446: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:02] "GET / HTTP/1.1" 200 -]
+[2025-02-14 13:23:04,630: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:04] "[36mGET /static/git_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:23:04,632: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:04] "[36mGET /static/i_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:23:04,671: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:04] "[36mGET /static/linkedin_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:23:04,679: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:04] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-14 13:23:04,716: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -]
+[2025-02-14 13:23:04,734: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:04] "[36mGET /static/placeholder.js HTTP/1.1[0m" 304 -]
+[2025-02-14 13:23:06,562: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:23:06] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]

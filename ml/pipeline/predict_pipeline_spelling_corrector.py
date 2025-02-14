@@ -47,10 +47,10 @@ class SpellingPredictPipeline:
             if not isinstance(preprocessed_text, str):
                 preprocessed_text = str(preprocessed_text)
 
-            spelling_corrected_text, changed_words = self.model.correct_spelling(preprocessed_text)
-            grammar_corrected_text, _ = self.model.correct_grammar(spelling_corrected_text)
+            corrected_text, changed_words = self.model.correct_spelling(preprocessed_text)
+           
 
-            return grammar_corrected_text, changed_words
+            return corrected_text, changed_words
 
         except Exception as e:
             raise CustomException(e, sys)
