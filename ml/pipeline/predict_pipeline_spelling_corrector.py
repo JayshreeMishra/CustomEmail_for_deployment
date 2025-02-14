@@ -4,6 +4,8 @@ import pickle
 import pandas as pd
 import time
 from config.exception import CustomException
+import nltk
+nltk.download('punkt')
 
 class SpellingPredictPipeline:
     def __init__(self):

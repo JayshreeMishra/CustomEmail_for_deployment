@@ -22,14 +22,10 @@ def error_message_detail(error, error_detail: sys):
 
 
 class CustomException(Exception):
-    def __init__(self, message, sys_info=None):
+    def __init__(self, message, sys_info):
         super().__init__(message)
         self.message = message
         self.sys_info = sys_info
 
-    def to_dict(self):
-        """Return error message as a dictionary."""
-        return {"error": self.message}
-
     def __str__(self):
-        return self.message  # Return the message instead of a non-existent attribute
+        return f"CustomException: {self.message}"
