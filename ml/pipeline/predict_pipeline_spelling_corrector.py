@@ -9,21 +9,18 @@ class SpellingPredictPipeline:
     def __init__(self):
         self.model = None
         self.preprocessor = None
-        self.last_loaded_time = None  # Track when model was loaded
-        self.model_ttl = 300  # Model expires after 5 minutes
+        self.last_loaded_time = None  
+        self.model_ttl = 300  # Keep model in memory for 5 minutes
+        self.setup_nltk()  
 
     def load_model(self):
-        """Load model only if not already loaded or if expired."""
+        """Load model only if not already loaded or expired."""
         if self.model and self.preprocessor:
-            elapsed_time = time.time() - self.last_loaded_time
-            if elapsed_time < self.model_ttl:
-                return  # Reuse the model to avoid unnecessary reloading
+            if time.time() - self.last_loaded_time < self.model_ttl:
+                return  
 
         model_path = os.path.join("artifacts", "spelling_model.pkl")
         preprocessor_path = os.path.join("artifacts", "spelling_preprocessor.pkl")
-
-        print(f"🔍 Checking model path: {model_path}, Exists? {os.path.exists(model_path)}")
-        print(f"🔍 Checking preprocessor path: {preprocessor_path}, Exists? {os.path.exists(preprocessor_path)}")
 
         if not os.path.exists(model_path) or not os.path.exists(preprocessor_path):
             raise CustomException("Model files not found!", sys)
@@ -35,23 +32,60 @@ class SpellingPredictPipeline:
             with open(preprocessor_path, 'rb') as f:
                 self.preprocessor = pickle.load(f)
 
-            self.last_loaded_time = time.time()  # Update load time
+            self.last_loaded_time = time.time()  
             print("✅ Model loaded successfully!")
 
         except Exception as e:
             raise CustomException(e, sys)
 
+    def unload_model(self):
+        """Unload the model after prediction to save memory."""
+        self.model = None
+        self.preprocessor = None
+        print("🔒 Model unloaded.")
+
+    def setup_nltk(self):
+        """Ensure necessary NLTK resources are available."""
+        import nltk
+        nltk_data_path = os.path.join(os.getcwd(), "ml", "data")
+        nltk.data.path.append(nltk_data_path)
+
+        for resource in ['punkt', 'stopwords']:
+            try:
+                nltk.data.find(f'tokenizers/{resource}') if resource == 'punkt' else nltk.data.find(f'corpora/{resource}')
+            except LookupError:
+                nltk.download(resource, download_dir=nltk_data_path)
+
     def predict(self, text):
-        """Load model if needed and predict."""
+        """Predict and return corrected text along with changed words."""
         try:
-            self.load_model()  # Load model if expired or not loaded
+            if not text:
+                raise ValueError("Input text cannot be empty.")
+
+            self.load_model()
+
             preprocessed_text = self.preprocessor.transform(pd.Series([text]))[0]
+            print(f"Preprocessed text: {preprocessed_text}")  # Debugging line
 
             if not isinstance(preprocessed_text, str):
-                preprocessed_text = str(preprocessed_text)
+                raise ValueError("Preprocessed text is not a string.")
 
-            corrected_text, changed_words = self.model.correct_spelling(preprocessed_text)
-           
+            # Ensure the function call works properly
+            result = self.model.correct_spelling(preprocessed_text)
+            print(f"Model output: {result}")  # Debugging line
+
+            # Handle cases where `correct_spelling` does not return the expected format
+            if isinstance(result, tuple) and len(result) == 2:
+                corrected_text, changed_words = result
+            else:
+                corrected_text = result if isinstance(result, str) else preprocessed_text
+                changed_words = []  # Ensure it is always a list
+
+            # Ensure changed_words is iterable
+            if not isinstance(changed_words, list):
+                changed_words = []
+
+            self.unload_model()
 
             return corrected_text, changed_words
 

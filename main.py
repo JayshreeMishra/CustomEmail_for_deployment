@@ -10,13 +10,6 @@ from ml.pipeline.predict_pipeline_spelling_corrector import SpellingPredictPipel
 from config.logging_config import logger
 from config.exception import CustomException
 
-import nltk
-
-nltk_data_path = os.path.join(os.getcwd(), "ml", "data")
-nltk.data.path.append(nltk_data_path) 
-nltk.download('punkt', download_dir=nltk_data_path)
-print(f"✅ NLTK data saved at {nltk_data_path}")
-
 template_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'app', 'templates')
 
 app= Flask(__name__, static_folder='app/static', template_folder=template_folder_path)
@@ -99,8 +92,9 @@ def spelling_corrector():
 
         corrected_text, changed_words = spelling_pipeline.predict(text)
 
-        # Ensure `changed_words` is a list of strings
-        changed_words = list(map(str, changed_words))
+        # Ensure `changed_words` is always a list of lists (not tuples)
+        if isinstance(changed_words, list):
+            changed_words = [[original, corrected] for original, corrected in changed_words]
 
         return jsonify({
             "corrected_text": corrected_text,
@@ -139,22 +133,6 @@ def spam_detection():
     except Exception as e:
         app.logger.error(f"Unexpected error: {str(e)}")
         return jsonify({'error': 'An unexpected error occurred.'}), 500
-
-@app.route('/test_json', methods=['POST'])
-def test_json():
-    try:
-        data = request.get_json()
-        app.logger.info(f"Received data: {data}")
-
-        # Simulate a response
-        response = {'message': 'Test successful', 'data': data}
-        app.logger.info(f"Response: {response}")
-
-        return jsonify(response)
-
-    except Exception as e:
-        app.logger.error(f"Error in /test_json: {str(e)}")
-        return jsonify({'error': 'An error occurred'}), 500
 
 #Use Render's assigned port for deployment
 if __name__ == '__main__':
