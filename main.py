@@ -1,6 +1,6 @@
 import os, sys
 import json
-from flask import Flask, render_template, request, flash, jsonify, redirect, url_for
+from flask import Flask, render_template, request, flash, jsonify
 from werkzeug.utils import secure_filename
 import email
 
@@ -20,7 +20,8 @@ print(f"✅ NLTK data saved at {nltk_data_path}")
 template_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'app', 'templates')
 
 app= Flask(__name__, static_folder='app/static', template_folder=template_folder_path)
-app.secret_key = 'mysecretkey'
+app.secret_key = os.environ.get('SECRET_KEY', 'mysecretkey') 
+is_production = os.environ.get('FLASK_ENV') == 'production'
 
 spelling_pipeline = SpellingPredictPipeline()
 spam_pipeline = SpamPredictPipeline()
@@ -113,15 +114,6 @@ def spelling_corrector():
     except Exception as e:
         app.logger.error(f"Unexpected error: {str(e)}")
         return jsonify({"error": "An unexpected error occurred."}), 500
-    
-@app.route('/debug', methods=['GET'])
-def debug():
-    return jsonify({
-        "nltk_data_path": nltk_data_path,
-        "spam_model_exists": os.path.exists(os.path.join("artifacts", "spam_model.pkl")),
-        "spelling_model_exists": os.path.exists(os.path.join("artifacts", "spelling_model.pkl"))
-    })
-
 
 @app.route('/spam_detection', methods=['POST'])
 def spam_detection():
@@ -134,6 +126,9 @@ def spam_detection():
         text = data['text']
         is_spam = spam_pipeline.predict(text)
 
+        # Log the output before returning
+        app.logger.info(f"Prediction output: {is_spam}")
+
         # Convert NumPy boolean to Python boolean
         return jsonify({'is_spam': bool(is_spam[0])})  
 
@@ -144,6 +139,22 @@ def spam_detection():
     except Exception as e:
         app.logger.error(f"Unexpected error: {str(e)}")
         return jsonify({'error': 'An unexpected error occurred.'}), 500
+
+@app.route('/test_json', methods=['POST'])
+def test_json():
+    try:
+        data = request.get_json()
+        app.logger.info(f"Received data: {data}")
+
+        # Simulate a response
+        response = {'message': 'Test successful', 'data': data}
+        app.logger.info(f"Response: {response}")
+
+        return jsonify(response)
+
+    except Exception as e:
+        app.logger.error(f"Error in /test_json: {str(e)}")
+        return jsonify({'error': 'An error occurred'}), 500
 
 #Use Render's assigned port for deployment
 if __name__ == '__main__':
