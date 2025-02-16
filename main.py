@@ -10,6 +10,13 @@ from ml.pipeline.predict_pipeline_spelling_corrector import SpellingPredictPipel
 from config.logging_config import logger
 from config.exception import CustomException
 
+import nltk
+
+nltk_data_path = os.path.join(os.getcwd(), "ml", "data")
+nltk.data.path.append(nltk_data_path) 
+nltk.download('punkt', download_dir=nltk_data_path)
+print(f"✅ NLTK data saved at {nltk_data_path}")
+
 template_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'app', 'templates')
 
 app= Flask(__name__, static_folder='app/static', template_folder=template_folder_path)
@@ -91,6 +98,9 @@ def spelling_corrector():
 
         corrected_text, changed_words = spelling_pipeline.predict(text)
 
+        # Ensure `changed_words` is a list of strings
+        changed_words = list(map(str, changed_words))
+
         return jsonify({
             "corrected_text": corrected_text,
             "changed_words": changed_words
@@ -98,39 +108,43 @@ def spelling_corrector():
 
     except CustomException as e:
         app.logger.error(f"CustomException: {str(e)}")
-        return jsonify(e.to_dict()), 500  # Returns JSON instead of HTML
+        return jsonify(e.to_dict()), 500
 
     except Exception as e:
         app.logger.error(f"Unexpected error: {str(e)}")
-        return jsonify({"error": "An unexpected error occurred."}), 500  # Handles unknown errors
+        return jsonify({"error": "An unexpected error occurred."}), 500
+    
+@app.route('/debug', methods=['GET'])
+def debug():
+    return jsonify({
+        "nltk_data_path": nltk_data_path,
+        "spam_model_exists": os.path.exists(os.path.join("artifacts", "spam_model.pkl")),
+        "spelling_model_exists": os.path.exists(os.path.join("artifacts", "spelling_model.pkl"))
+    })
+
 
 @app.route('/spam_detection', methods=['POST'])
 def spam_detection():
     try:
         data = request.get_json()
-        
-        # Check if the request contains the required data
+
         if not data or 'text' not in data:
             return jsonify({'error': 'No text provided'}), 400
 
         text = data['text']
-        
-        # Call the spam prediction pipeline
         is_spam = spam_pipeline.predict(text)
 
-        # Return the result as JSON
-        return jsonify({'is_spam': bool(is_spam[0])})
+        # Convert NumPy boolean to Python boolean
+        return jsonify({'is_spam': bool(is_spam[0])})  
 
     except CustomException as e:
-        # Log the custom exception and return a structured error response
         app.logger.error(f"CustomException: {str(e)}")
-        return jsonify(e.to_dict()), 500  # Returns JSON instead of HTML
+        return jsonify(e.to_dict()), 500
 
     except Exception as e:
-        # Log unexpected errors and return a generic error response
         app.logger.error(f"Unexpected error: {str(e)}")
-        return jsonify({'error': 'An unexpected error occurred.'}), 500  # Handles unknown errors
-    
+        return jsonify({'error': 'An unexpected error occurred.'}), 500
+
 #Use Render's assigned port for deployment
 if __name__ == '__main__':
     port = os.environ.get("PORT", "Not Set")

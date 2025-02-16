@@ -22,10 +22,12 @@ def error_message_detail(error, error_detail: sys):
 
 
 class CustomException(Exception):
-    def __init__(self, message, sys_info):
+    def __init__(self, message, details=None):
         super().__init__(message)
-        self.message = message
-        self.sys_info = sys_info
+        self.details = details
 
-    def __str__(self):
-        return f"CustomException: {self.message}"
+    def to_dict(self):
+        return {
+            "error": str(self),
+            "details": str(self.details) if self.details else "No additional details"
+        }

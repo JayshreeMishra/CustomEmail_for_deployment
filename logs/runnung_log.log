@@ -115,3 +115,49 @@ TypeError: __str__ returned non-string (type AttributeError)
 [2025-02-14 13:55:20,468: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:55:20] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
 [2025-02-14 13:55:20,611: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:55:20] "[36mGET /static/i_icon.png HTTP/1.1[0m" 304 -]
 [2025-02-14 13:55:47,134: INFO: _internal: 127.0.0.1 - - [14/Feb/2025 13:55:47] "POST /spelling_correction HTTP/1.1" 200 -]
+[2025-02-16 12:58:57,549: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.43.221:10000]
+[2025-02-16 12:58:57,567: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-02-16 12:59:08,065: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:08] "GET / HTTP/1.1" 200 -]
+[2025-02-16 12:59:10,412: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:10] "GET /static/logo.png HTTP/1.1" 200 -]
+[2025-02-16 12:59:10,413: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:10] "GET /static/styles.css HTTP/1.1" 200 -]
+[2025-02-16 12:59:10,478: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:10] "GET /static/git_icon.png HTTP/1.1" 200 -]
+[2025-02-16 12:59:10,481: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:10] "GET /static/linkedin_icon.png HTTP/1.1" 200 -]
+[2025-02-16 12:59:10,520: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:10] "GET /static/i_icon.png HTTP/1.1" 200 -]
+[2025-02-16 12:59:10,569: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:10] "GET /static/placeholder.js HTTP/1.1" 200 -]
+[2025-02-16 12:59:13,184: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:13] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-16 12:59:50,908: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:50] "POST /spelling_correction HTTP/1.1" 200 -]
+[2025-02-16 12:59:50,950: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 12:59:50] "POST /spelling_correction HTTP/1.1" 200 -]
+[2025-02-16 13:00:10,525: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:00:10] "POST /spam_detection HTTP/1.1" 200 -]
+[2025-02-16 13:02:40,472: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.43.221:10000]
+[2025-02-16 13:02:40,474: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-02-16 13:03:05,757: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:05] "GET / HTTP/1.1" 200 -]
+[2025-02-16 13:03:08,040: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:08] "[36mGET /static/i_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:08,048: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:08] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:08,078: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:08,082: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:08] "[36mGET /static/placeholder.js HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:08,091: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:08] "[36mGET /static/linkedin_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:08,169: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:08] "[36mGET /static/git_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:10,118: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:10] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:03:38,058: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:03:38] "POST /spelling_correction HTTP/1.1" 200 -]
+[2025-02-16 13:04:27,798: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:04:27] "POST /spam_detection HTTP/1.1" 200 -]
+[2025-02-16 13:27:05,999: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.43.221:10000]
+[2025-02-16 13:27:06,000: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-02-16 13:27:16,144: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:16] "GET / HTTP/1.1" 200 -]
+[2025-02-16 13:27:18,532: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:18] "[36mGET /static/i_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:27:18,534: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:18] "[36mGET /static/logo.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:27:18,538: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -]
+[2025-02-16 13:27:18,578: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:18] "[36mGET /static/git_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:27:18,615: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:18] "[36mGET /static/linkedin_icon.png HTTP/1.1[0m" 304 -]
+[2025-02-16 13:27:18,629: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:18] "[36mGET /static/placeholder.js HTTP/1.1[0m" 304 -]
+[2025-02-16 13:27:40,926: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:27:40] "POST /spelling_correction HTTP/1.1" 200 -]
+[2025-02-16 13:28:04,639: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:28:04] "GET /debug HTTP/1.1" 200 -]
+[2025-02-16 13:28:05,621: INFO: _internal: 127.0.0.1 - - [16/Feb/2025 13:28:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]

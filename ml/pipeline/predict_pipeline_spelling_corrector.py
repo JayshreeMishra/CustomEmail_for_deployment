@@ -4,8 +4,6 @@ import pickle
 import pandas as pd
 import time
 from config.exception import CustomException
-import nltk
-nltk.download('punkt')
 
 class SpellingPredictPipeline:
     def __init__(self):
@@ -23,6 +21,9 @@ class SpellingPredictPipeline:
 
         model_path = os.path.join("artifacts", "spelling_model.pkl")
         preprocessor_path = os.path.join("artifacts", "spelling_preprocessor.pkl")
+
+        print(f"🔍 Checking model path: {model_path}, Exists? {os.path.exists(model_path)}")
+        print(f"🔍 Checking preprocessor path: {preprocessor_path}, Exists? {os.path.exists(preprocessor_path)}")
 
         if not os.path.exists(model_path) or not os.path.exists(preprocessor_path):
             raise CustomException("Model files not found!", sys)
